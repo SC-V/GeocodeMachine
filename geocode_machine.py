@@ -32,9 +32,9 @@ def get_google_geocoder_response(address: str):
             for coordinate in suggested_coordinates:
                 lat = coordinate["geometry"]["location"]["lat"]
                 lon = coordinate["geometry"]["location"]["lng"]
-                precision = precision + "|" + coordinate["geometry"]["location_type"]
-                coordinates = coordinates + "|" + str(lat) + "," + str(lon)
-                formatted_address = formatted_address + coordinate["formatted_address"]
+                precision = precision + " | " + coordinate["geometry"]["location_type"] + "\n"
+                coordinates = coordinates + " | " + str(lat) + "," + str(lon) + "\n"
+                formatted_address = formatted_address + coordinate["formatted_address"] + "\n"
         st.code(coordinates)
         st.code(precision)
         st.code(formatted_address)
