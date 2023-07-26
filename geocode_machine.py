@@ -26,7 +26,7 @@ def get_google_geocoder_response(address: str):
         else:
             suggested_coordinates = json.loads(response.text)["results"]
             found_points = len(suggested_coordinates)
-            coordinates = str(found_points)
+            coordinates = str(found_points) + " found points" + "\n"
             precision = ""
             formatted_address = ""
             for coordinate in suggested_coordinates:
